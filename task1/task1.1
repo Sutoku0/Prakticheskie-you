@@ -1,18 +1,20 @@
 import turtle
 
-t = turtle.Turtle()
-t.speed(0)
-t.hideturtle()
+#создаем и настроиваем экран
 screen = turtle.Screen()
 screen.bgcolor("lightblue")
 screen.setup(width=800, height=700)
 
-# =====================================================
-# ПАРА 2 — ОБЛАКО
-# =====================================================
+#черепаху создаем
+t = turtle.Turtle()
+t.speed(0)
+t.hideturtle()
 
-t.color("white")
-coords = [
+#цвет мутим
+t.color("pink")
+
+#мутим координаты 1 облака
+cloud_coords_1 = [
     (100, 280, 40),
     (70, 290, 30),
     (130, 290, 30),
@@ -20,12 +22,48 @@ coords = [
     (150, 270, 25),
     (100, 260, 35)
 ]
-for a, b, r in coords:
+#мутим координаты 2 облака
+cloud_coords_2 = [
+    (-100, 180, 40),
+    (-70, 190, 30),
+    (-130, 190, 30),
+    (-50, 170, 25),
+    (-150, 170, 25),
+    (-100, 160, 35)
+]
+
+cloud_coords_3 = [
+    (-150, 280, 40),
+    (-150, 290, 30),
+    (-200, 290, 30),
+    (-200, 270, 25),
+    (-250, 270, 25),
+    (-250, 260, 35)
+]
+#рисуем облачка вабова
+for x, y, r in cloud_coords_1:
     t.penup()
-    t.goto(a, b - r)
+    t.goto(x, y - r)
     t.pendown()
     t.begin_fill()
     t.circle(r)
     t.end_fill()
 
+for x, y, r in cloud_coords_2:
+    t.penup()
+    t.goto(x, y - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+for x, y, r in cloud_coords_3:
+    t.penup()
+    t.goto(x, y - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+#заканичваем работу с облаком
 turtle.done()
