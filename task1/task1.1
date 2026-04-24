@@ -1,0 +1,31 @@
+import turtle
+
+t = turtle.Turtle()
+t.speed(0)
+t.hideturtle()
+screen = turtle.Screen()
+screen.bgcolor("lightblue")
+screen.setup(width=800, height=700)
+
+# =====================================================
+# ПАРА 2 — ОБЛАКО
+# =====================================================
+
+t.color("white")
+coords = [
+    (100, 280, 40),
+    (70, 290, 30),
+    (130, 290, 30),
+    (50, 270, 25),
+    (150, 270, 25),
+    (100, 260, 35)
+]
+for a, b, r in coords:
+    t.penup()
+    t.goto(a, b - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+turtle.done()
