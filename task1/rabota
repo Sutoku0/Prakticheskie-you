@@ -1,0 +1,251 @@
+import turtle
+
+t = turtle.Turtle()
+t.speed(0)
+t.hideturtle()
+screen = turtle.Screen()
+screen.bgcolor("lightblue")
+screen.setup(width=800, height=700)
+#трава
+t.color("green")
+for i in range(33):
+    t.penup()
+    t.goto(-380 + i * 25, -342)
+    t.pendown()
+    d = 1 if i % 2 == 0 else -1
+    t.setheading(75 + (i % 5) * 10)
+    t.width(3 - (i % 2))
+    n = 70 + (i % 30)
+    for j in range(int(n / 10)):
+        t.forward(15)
+        t.left(5 * d)
+    t.width(1)
+
+
+# =====================================================
+# ПАРА 3 — ЦВЕТОК
+# =====================================================
+
+# Рисуем стебелек
+t.color("darkgreen")
+t.width(4)
+t.penup()
+t.goto(0, -350)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+
+# Цветы жизни - это явно не дети
+t.width(1)
+t.color("pink")
+for i in range(8):
+    t.penup()
+    t.goto(0, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+
+# Центр цветichка
+t.penup()
+t.goto(-15, -190)
+t.pendown()
+t.color("yellow")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+# Цветы жизни - это явно не дети 2
+
+t.color("darkgreen")
+t.width(4)
+t.penup()
+t.goto(-200, -350)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+
+t.width(1)
+t.color("white")
+for i in range(8):
+    t.penup()
+    t.goto(-200, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+
+# Центр цветichка
+t.penup()
+t.goto(-210, -190)
+t.pendown()
+t.color("yellow")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+# Цветы жизни - это явно не дети 3
+
+t.color("darkgreen")
+t.width(4)
+t.penup()
+t.goto(200, -350)
+t.pendown()
+t.setheading(90)
+t.forward(120)
+
+t.width(1)
+t.color("red")
+for i in range(8):
+    t.penup()
+    t.goto(200, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(30, 180)
+    t.circle(30, 180)
+    t.end_fill()
+
+# Центр цветichка
+t.penup()
+t.goto(190, -190)
+t.pendown()
+t.color("yellow")
+t.begin_fill()
+t.circle(20)
+t.end_fill()
+
+# =====================================================
+# ПАРА 1 — СОЛНЫШКО
+# =====================================================
+
+t.color("orange")
+t.width(6)
+for i in range(16):
+    t.penup()
+    t.goto(300, 250)
+    t.pendown()
+    t.setheading(i * 22.5)
+    t.forward(90)
+t.width(1)
+t.penup()
+t.goto(280, 190)
+t.pendown()
+t.color("yellow")
+t.begin_fill()
+t.circle(60)
+t.end_fill()
+
+
+# =====================================================
+# ПАРА 4 — СЕРДЕЧКО
+# =====================================================
+
+t.penup()
+t.goto(200, 60)
+t.pendown()
+t.color("red")
+t.begin_fill()
+t.setheading(140)
+t.forward(62)
+t.circle(-35, 200)
+t.setheading(60)
+t.circle(-35, 200)
+t.forward(62)
+t.end_fill()
+
+#сердешко
+t.penup()
+t.goto(-250, 60)
+t.pendown()
+t.color("pink")
+t.begin_fill()
+t.setheading(140)
+t.forward(62)
+t.circle(-35, 200)
+t.setheading(60)
+t.circle(-35, 200)
+t.forward(62)
+t.end_fill()
+
+#надписи
+t.penup()
+t.goto(0, 15)
+t.pendown()
+t.color("purple")
+
+t.write("С 8 Марта!", align="center", font=("Arial", 36, "bold"))
+t.penup()
+t.goto(0, -40)
+t.pendown()
+
+t.color("deeppink")
+t.write("Дорогие женщины!", align="center", font=("Arial", 20, "italic"))
+t.penup()
+t.goto(0, -100)
+t.pendown()
+t.color("blue")
+
+t.color("blue")
+t.write("Пусть каждый день будет ярким!", align="center", font=("Arial", 14, "normal"))
+
+# =====================================================
+# ПАРА 2 — ОБЛАКО
+# =====================================================
+
+t.color("white")
+cloud_coords_1 = [
+    (100, 380, 40),
+    (70, 390, 30),
+    (130, 390, 30),
+    (50, 370, 25),
+    (150, 370, 25),
+    (100, 360, 35)
+]
+#мутим координаты 2 облака
+cloud_coords_2 = [
+    (-100, 300, 40),
+    (-70, 300, 30),
+    (-130, 300, 30),
+    (-50, 300, 25),
+    (-150, 470, 25),
+    (-100, 300, 35)
+]
+
+cloud_coords_3 = [
+    (-150, 380, 40),
+    (-150, 390, 30),
+    (-200, 390, 30),
+    (-200, 370, 25),
+    (-250, 370, 25),
+    (-250, 360, 35)
+]
+for x, y, r in cloud_coords_1:
+    t.penup()
+    t.goto(x, y - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+for x, y, r in cloud_coords_2:
+    t.penup()
+    t.goto(x, y - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+for x, y, r in cloud_coords_3:
+    t.penup()
+    t.goto(x, y - r)
+    t.pendown()
+    t.begin_fill()
+    t.circle(r)
+    t.end_fill()
+
+turtle.done()
