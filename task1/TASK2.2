@@ -1,0 +1,54 @@
+
+
+import turtle
+
+def main():
+    # --- Настройки экрана ---
+    t = turtle.Turtle()
+    t.speed(0)
+    t.hideturtle()
+    screen = turtle.Screen()
+    screen.bgcolor("lightblue")
+    screen.setup(width=800, height=700)
+
+    # =====================================================
+    # ПАРА 4 — СЕРДЕЧКО
+    # =====================================================
+
+    t.penup()
+    t.goto(110, 60)
+    t.pendown()
+    t.color("red")
+    t.begin_fill()
+    t.setheading(140)
+    t.forward(62)
+    t.circle(-35, 200)
+    t.setheading(60)
+    t.circle(-35, 200)
+    t.forward(62)
+    t.end_fill()
+
+    # НАДПИСИ
+    t.penup()
+    t.goto(0, 15)
+    t.pendown()
+    t.color("purple")
+
+    t.write("С 8 Марта!", align="center", font=("Arial", 36, "bold"))
+    t.penup()
+    t.goto(-10, 30)
+    t.pendown()
+
+    t.color("deeppink")
+    t.write("Дорогие женщины!", align="center", font=("Arial", 20, "italic"))
+    t.penup()
+    t.goto(10, 100)
+    t.pendown()
+    t.color("blue")
+
+    t.write("Пусть каждый день будет ярким!", align="center", font=("Arial", 14, "normal"))
+
+    turtle.done()
+
+if __name__ == "__main__":
+    main()
